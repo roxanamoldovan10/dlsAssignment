@@ -12,6 +12,9 @@ export class RegisterPresentComponent implements OnInit {
   network: boolean;
   registered: boolean;
 
+
+  
+
   constructor(
     private rollCallService: RollCallService,
     public registerService: RegisterService,
@@ -41,6 +44,7 @@ export class RegisterPresentComponent implements OnInit {
               this.registered = true;
             }, (error)=> {
               this.alertService.error("Wrong credentials");
+              this.registered = false;
             } 
           );
         }
