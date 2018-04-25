@@ -5,7 +5,6 @@ var db = mongojs('mongodb://localhost:27017/rollcall', ['user']);
 
 // Get login
 router.get('/login', function(req, res, next) {
-    console.log("LOGIN REQ: " + req.query.email);
     db.user.findOne({email:req.query.email, password:req.query.password}, function(err, result){
         if(result){
             res.send({result: result});
@@ -18,7 +17,6 @@ router.get('/login', function(req, res, next) {
 
 // Register
 router.post('/register', function(req, res, next) {
-    console.log("REG  REQ: " + req.body.email);
     db.user.save({email:req.body.email, password:req.body.password, role: 1}, function(err, result){
         if(result){
             res.send({result: result});

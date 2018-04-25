@@ -7,7 +7,6 @@ import { HttpHeaders, HttpClient, HttpParams } from '@angular/common/http';
 
 @Injectable()
 export class RegisterService {
-  code: number;
 
   constructor(private http: HttpClient, 
     private router: Router) { }
@@ -15,6 +14,13 @@ export class RegisterService {
     register(user: string, code: number) {
         var options = {user: user, code: code}
         return this.http.post(`http://localhost:3000/reg/register`, options)
+        .map((res:Response) => 
+            res);
+    }
+
+    getRoomAttendance(code: string) {
+        var options = {params: {code: code}}
+        return this.http.get(`http://localhost:3000/reg/attendance`, options)
         .map((res:Response) => 
             res);
     }

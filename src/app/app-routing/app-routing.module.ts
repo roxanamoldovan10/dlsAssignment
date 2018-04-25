@@ -1,3 +1,4 @@
+import { AttendanceComponent } from './../attendance/attendance.component';
 import { NgModule }             from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
@@ -12,7 +13,8 @@ const routes: Routes = [
   { path: 'app-register', component: RegisterComponent },
   { path: 'app-dashboard', component: DashboardComponent },
   { path: 'app-code', component: CodeComponent },
-  { path: 'app-register-present', component: RegisterPresentComponent }
+  { path: 'app-register-present', component: RegisterPresentComponent },
+  { path: 'app-attendance', component: AttendanceComponent},
 ];
 
 @NgModule({

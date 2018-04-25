@@ -46,4 +46,16 @@ router.post('/register', function(req, res, next) {
 
     
 });
+
+
+router.get('/attendance', function(req, res, next) {
+    db.registered_students.find({code:req.query.code}, function(err, result){
+        if(result){
+            res.send({result: result});
+        } else {
+            return res.status(400).send(err);
+        }
+    });
+});
+
 module.exports = router;

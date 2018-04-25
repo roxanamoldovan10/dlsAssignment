@@ -19,11 +19,26 @@ export class RollCallService {
     // this.http.post('/api/...', code, classroom);
   }
 
+  getRooms(user){
+    var options = {params: {email: user}}
+        return this.http.get(`http://localhost:3000/cod/getRooms`, options)
+            .map((res:Response) => 
+            res);
+
+  }
+
   getCode(code: string){
     var options = {params: {code: code}}
         return this.http.get(`http://localhost:3000/cod/getCode`, options)
             .map((res:Response) => 
             res);
 
+  }
+
+  getAttendance(room: string) {
+    var options = {params: {room: room}}
+    return this.http.get(`http://localhost:3000/cod/getAttendance`, options)
+        .map((res:Response) => 
+        res);
   }
 }

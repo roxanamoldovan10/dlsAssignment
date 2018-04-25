@@ -4,9 +4,9 @@
       <div class="form-group">
           <label>Classroom</label>
           <select #selectedClass name="class" class="form-control">
-              <option value='class1'>Class1</option>
-              <option value='class2'>Class2</option>
-             <!-- <option *ngFor="let class of classes" [ngValue]="class">{{class}}</option> -->
+              <!-- <option value='class1'>Class1</option>
+              <option value='class2'>Class2</option> -->
+              <option *ngFor="let room of rooms" [ngValue]="room.name">{{room.name}}</option>
           </select>
         </div>
   

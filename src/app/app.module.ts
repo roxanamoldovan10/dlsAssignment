@@ -1,3 +1,4 @@
+import { AttendanceComponent } from './attendance/attendance.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
@@ -15,6 +16,7 @@ import { CodeComponent } from './code/code.component';
 import { RegisterPresentComponent } from './register-present/register-present.component';
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,7 +24,8 @@ import { RegisterPresentComponent } from './register-present/register-present.co
     RegisterComponent,
     DashboardComponent,
     CodeComponent,
-    RegisterPresentComponent
+    RegisterPresentComponent,
+    AttendanceComponent
   ],
   imports: [
     BrowserModule,

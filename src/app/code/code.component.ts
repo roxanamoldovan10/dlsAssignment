@@ -9,6 +9,8 @@ import { RollCallService, AlertService } from '../services/index';
 export class CodeComponent implements OnInit {
   dateObj = new Date();
   code: string;
+  rooms: any;
+  user: any;
 
   constructor(
     private rollCallService: RollCallService,
@@ -16,6 +18,20 @@ export class CodeComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    this.getClasses();
+  }
+
+  getClasses() {
+    this.user = JSON.parse(localStorage.getItem('currentUser'));
+    this.rollCallService.getRooms(this.user)
+    .subscribe(
+      (res:any)=> {
+        this.rooms = res.result;
+      }, (error)=> {
+        this.alertService.error("Wrong credentials");
+      } 
+    );
+
   }
 
   generate(event) {
